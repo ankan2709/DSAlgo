@@ -41,6 +41,22 @@ class BinarySearchTree:
             self.right.postorderTraversal()
         print(self.value)
 
+    def search(self, value):
+        if value < self.value:
+            if self.left is None:
+                return False
+            else:
+                return self.left.search(value)
+        elif value > self.value:
+            if self.right is None:
+                return False
+            else:
+                return self.right.search(value)
+
+        else:
+            return True
+
+
 
 
 
@@ -54,5 +70,5 @@ bst.inorderTraversal()
 bst.preorderTraversal()
 bst.postorderTraversal()
 
-
+print(bst.search(3))
 
